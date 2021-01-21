@@ -10,7 +10,7 @@ import javafx.beans.property.StringProperty;
 
 /**
  *
- * @author Tan
+ * @author Yonatan
  */
 public class DataPersonal {
     
