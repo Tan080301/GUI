@@ -5,15 +5,20 @@
 5 */
  package bukualamat;
 
+ 
+ import bukualamat.model.DataPersonal;
  import java.io.IOException;
  import java.util.logging.Level;
  import java.util.logging.Logger;
  import javafx.application.Application;
+ import javafx.collections.ObservableList;
  import javafx.fxml.FXMLLoader;
  import javafx.scene.Scene;
  import javafx.scene.layout.AnchorPane;
  import javafx.scene.layout.BorderPane;
  import javafx.stage.Stage;
+
+ 
 
  /**
 19 *
@@ -25,7 +30,22 @@ public class BukuAlamat extends Application {
 private Stage stageAplikasi;
 private BorderPane rootAplikasi;
 
- @Override
+private ObservableList<DataPersonal> dataperson = FXcollections.observableArrayList();
+//konstruksi untuk inisialisasi data sebagai bahan tes
+public BukuAlamat(){
+    dataperson.add(new DataPersonal("Yonatan","sunatan"));
+    dataperson.add(new DataPersonal("Jono","sujono"));
+    dataperson.add(new DataPersonal("Dadang","sudadang"));
+    dataperson.add(new DataPersonal("Dimas","sudimas"));
+    dataperson.add(new DataPersonal("Adi","purnomo"));
+    
+}
+//fungsi untuk membuat data list
+    public ObservableList<DataPersonal> getDataPersonal(){
+    return dataperson;
+}
+
+@Override
 public void start(Stage primaryStage){
 this.stageAplikasi = primaryStage;
 this.stageAplikasi.setTitle("Buku Alamat");
@@ -36,7 +56,8 @@ this.stageAplikasi.setTitle("Buku Alamat");
 
  /**
 38 * @param args the command line arguments
-39 */
+39
+     * @param args */
 public static void main(String[] args) {
 launch(args);
  }
